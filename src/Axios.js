@@ -25,9 +25,11 @@ function App() {
     content = <h2 className="text-slate-400 text-2xl font-bold">Loading...</h2>;
   } else if (postStatus === "success") {
     const renderedPosts = post.map((post, index) => (
-      <div key={index} className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold">{post.first_name}</h2>
-        <p className="text-slate-400">{post.date_of_bith}</p>
+      <div key={index} className="w-1/2 bg-white shadow-md rounded-lg p-4">
+        <h1 className="w-fit px-3 py-1 mb-2 border rounded-md text-2xl text-cyan-100 font-bold bg-slate-600">{post.id}</h1>
+        <img src={post.image} alt={post.title} className="w-full aspect-auto" />
+        <h2 className="text-xl font-bold">{post.date}</h2>
+        <p className="text-slate-400">{post.description}</p>
       </div>
     ));
     content = renderedPosts;
